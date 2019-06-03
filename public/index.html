@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">
-  <link rel="stylesheet" href="scripts/semantic-ui-calendar/dist/calendar.min.css">
+  <link rel="stylesheet" href="./css/app.css">
   <title>SPA Demo</title>
 </head>
 <body>
   <div class="ui container">
+
     <!-- Error Template -->
     <script id="error-template" type="text/x-handlebars-template">
       <div class="ui {{color}} inverted segment" style="height:250px;">
@@ -24,37 +25,57 @@
       </div>
     </script>
 
+    <!-- Error Template -->
+    <script id="detail-template" type="text/x-handlebars-template">
+      <div class="ui {{}} inverted segment" style="height:250px;">
+        <br>
+        <h2 class="ui center aligned icon header">
+          <i class="exclamation triangle icon"></i>
+          <div class="content">
+            {{}}
+            <div class="sub header">{{}}</div>
+          </div>
+        </h2>
+      </div>
+    </script>
+
     <!-- Currency Rates Template -->
     <script id="table-template" type="text/x-handlebars-template">
-      <h1 class="ui header">Agric Data</h1>
+      <h1 class="ui header">Agriculture Data</h1>
       <hr>
       <div class="ui loading basic segment">
         <table class="ui celled striped selectable inverted table">
           <thead>
             <tr>
-              <th>SN</th>
-              <th>Region</th>
-              <th>District</th>
-              <th>Year</th>
-              <th>Area (HA)</th>
-              <th>Yield (MT/HA)</th>
-              <th>Production (MT)</th>
+              <th class="column-head" data-value="sn">SN</th>
+              <th class="column-head" data-value="region">Region</th>
+              <th class="column-head" data-value="district">District</th>
+              <th class="column-head" data-value="year">Year</th>
+              <th class="column-head" data-value="area_ha">Area (HA)</th>
+              <th class="column-head" data-value="yield_mt_ha">Yield (MT/HA)</th>
+              <th class="column-head" data-value="production_mt">Production (MT)</th>
             </tr>
           </thead>
           <tbody>
             {{#each data}}
             <tr>
-              <td>{{sn}}</td>
-              <td>{{region}}</td>
-              <td>{{district}}</td>
-              <td>{{year}}</td>
-              <td>{{area_ha}}</td>
-              <td>{{yield_mt_ha}}</td>
-              <td>{{production_mt}}</td>
+              <td class="row-item" data-value="{{sn}}">{{sn}}</td>
+              <td class="row-item" data-value="{{sn}}">{{region}}</td>
+              <td class="row-item" data-value="{{sn}}">{{district}}</td>
+              <td class="row-item" data-value="{{sn}}">{{year}}</td>
+              <td class="row-item" data-value="{{sn}}">{{area_ha}}</td>
+              <td class="row-item" data-value="{{sn}}">{{yield_mt_ha}}</td>
+              <td class="row-item" data-value="{{sn}}">{{production_mt}}</td>
             </tr>
             {{/each}}
           </tbody>
         </table>
+      </div>
+
+      <div>
+        {{#times pageNumber}}
+          <a href="/" class="page-number" data-value="{{this}}">{{this}}</a>
+        {{/times}}
       </div>
     </script>
 
