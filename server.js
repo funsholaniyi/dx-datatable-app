@@ -9,14 +9,6 @@ const port = process.env.PORT || 3000;
 // Set public folder as root
 app.use(express.static('public'));
 
-// Parse POST data as URL encoded data
-app.use(bodyParser.urlencoded({
-    extended: true,
-}));
-
-// Parse POST data as JSON
-app.use(bodyParser.json());
-
 // Provide access to node_modules folder
 app.use('/scripts', express.static(`${__dirname}/node_modules/`));
 

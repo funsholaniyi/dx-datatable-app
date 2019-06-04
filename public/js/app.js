@@ -1,4 +1,4 @@
-const pageSize = 200;
+const pageSize = 150;
 let startPage = 1;
 let endPage = 1;
 let pageNumber = 1;
@@ -9,8 +9,8 @@ const el = $('#app');
 
 // Compile Handlebar Templates
 const errorTemplate = Handlebars.compile($('#error-template').html());
-const detailTemplate = Handlebars.compile($('#detail-template').html());
 const tableTemplate = Handlebars.compile($('#table-template').html());
+const detailTemplate = Handlebars.compile($('#details-template').html());
 
 window.addEventListener('load', () => {
 
@@ -27,7 +27,7 @@ window.addEventListener('load', () => {
 
     // Display Error Banner
     const showError = (error) => {
-        const {title, message} = error.response.data;
+        const {title, message} = {title:'Error', message: 'An error occured'};
         const html = errorTemplate({color: 'red', title, message});
         el.html(html);
     };
@@ -39,8 +39,8 @@ window.addEventListener('load', () => {
         el.html(html);
         try {
             // Load Currency Rates
-
-            if (!all_data.length) {
+            if (all_data === null || !all_data) {
+                console.log('got here page');
                 const response = await api.get('/');
                 all_data = response.data;
                 localStorage.setItem('__agric_data__', JSON.stringify(all_data));
@@ -121,7 +121,7 @@ document.addEventListener('click', function (event) {
         const selectedRow = target.attr('data-value');
         const rowItem = data.find(x => x['sn'] === selectedRow);
         let html = detailTemplate(rowItem);
-        el.html(html);
+
         $('.loading').removeClass('loading');
     }
 }, false);
