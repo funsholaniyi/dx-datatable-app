@@ -38,14 +38,19 @@
                    target="_blank" role="button">View Source Code</a>
                 <br>
                 <small>
-                    <a class="" href="https://github.com/funsholaniyi/dx-challenge-backend" target="_blank" role="button">View Backend Source</a><br>
-                    <a class="" href="https://data.gov.gh/search/type/dataset" target="_blank" role="button">View Similar
+                    <a class="" href="https://github.com/funsholaniyi/dx-challenge-backend" target="_blank"
+                       role="button">View Backend Source</a><br>
+                    <a class="" href="https://data.gov.gh/search/type/dataset" target="_blank" role="button">View
+                        Similar
                         Datasets</a>
                 </small>
 
                 <hr>
                 <p>Side Notes</p>
-                    <small>- Not yet all screen view compatible and <a href="https://www.sitepoint.com/single-page-app-without-framework/" target="_blank">This tutorial</a> was really helpful as i am mostly experienced with the Angular framework</small>
+                <small>- Not yet all screen view compatible and <a
+                        href="https://www.sitepoint.com/single-page-app-without-framework/" target="_blank">This
+                    tutorial</a> was really helpful as i am mostly experienced with the Angular framework
+                </small>
             </div>
         </div>
         <div class="col-md-9  col-xs-12 main">
@@ -53,26 +58,25 @@
             <script id="error-template" type="text/x-handlebars-template">
                 <div class="alert alert-danger">
                     <br>
-                    <h2 class="center header">
-                        <div class="content">
-                            {{title}}
-                            <div class="sub header">{{message}}</div>
-                        </div>
-                    </h2>
+                    <div class="content">
+                        <h3>{{title}}</h3>
+                        <hr>
+                        <p>{{message}}</p>
+                    </div>
                 </div>
             </script>
 
 
+            <!-- Currency Rates Template -->
+            <script id="loader-template" type="text/x-handlebars-template">
+                <div class="d-flex align-items-center">
+                    <strong>Loading...</strong>
+                    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                </div>
+            </script>
 
             <!-- Currency Rates Template -->
             <script id="table-template" type="text/x-handlebars-template">
-
-                <!--<div class="text-center">-->
-                <!--<div class="spinner-border" role="status">-->
-                <!--<span class="sr-only">Loading...</span>-->
-                <!--</div>-->
-                <!--</div>-->
-
                 <div class="table-responsive pt-1">
                     <table class="table table-striped table-hover">
                         <thead class="thead-dark brand">

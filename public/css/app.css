@@ -6,19 +6,43 @@ body {
     margin: 0;
 }
 
-
 h1, h2, h3, h4, h5, h6, th, button {
     font-family: 'Karla', '', sans-serif;
     font-weight: 600;
 }
-.page-item a{
+
+th {
+    text-transform: uppercase;
+}
+
+.brand {
+    background-color: #6747c7 !important;
+}
+
+.table .brand th {
+    background-color: #6747c7 !important;
+}
+
+#cell-data {
+    font-weight: 700;
+    font-family: 'Karla', '', sans-serif;
+    color: #6747c7;
+}
+
+.branded-row td {
+    background-color: #6747c7;
+    color: white;
+}
+
+.page-item a {
     color: #6747c7 !important;
 }
-.column-head{
+
+.column-head {
     cursor: pointer;
 }
 
-.sidebar{
+.sidebar {
     z-index: 1;
     left: 10px;
     position: fixed;
@@ -26,48 +50,24 @@ h1, h2, h3, h4, h5, h6, th, button {
     padding: 8px 0;
 }
 
-.main{
+.main {
     margin-left: 25%;
 }
 
-.branded-row td{
-    background-color: #6747c7;
-    color: white;
-}
-
-#cell-data{
-    font-weight: 700;
-    font-family: 'Karla', '', sans-serif;
-    color: #6747c7;
-}
-
-
-/* Landscape phones and down */
-@media (max-width: 720px) {
+/* Smaller screens and down */
+@media (max-width: 540px) {
     body {
         top: 0;
     }
-    .sidebar{
+
+    .sidebar {
         position: relative;
         left: 0;
         top: 0;
     }
 
-    .main{
+    .main {
         margin-top: 10%;
         margin-left: 0;
     }
-}
-
-th{
-    text-transform: uppercase;
-}
-
-
-.brand{
-    background-color: #6747c7 !important;
-}
-
-.table .brand th{
-    background-color: #6747c7 !important;
 }
