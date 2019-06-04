@@ -6,11 +6,10 @@ let all_data = JSON.parse(localStorage.getItem('__agric_data__'));
 let data = {};
 let sortHistory = [];
 const el = $('#app');
-
+let cellData = 'Nothing';
 // Compile Handlebar Templates
 const errorTemplate = Handlebars.compile($('#error-template').html());
 const tableTemplate = Handlebars.compile($('#table-template').html());
-const detailTemplate = Handlebars.compile($('#details-template').html());
 
 window.addEventListener('load', () => {
 
@@ -116,13 +115,12 @@ document.addEventListener('click', function (event) {
 
         // new page
 
-        console.log(target);
+        cellData = target.html();
+        $('#cell-data').html(cellData);
 
-        const selectedRow = target.attr('data-value');
-        const rowItem = data.find(x => x['sn'] === selectedRow);
-        let html = detailTemplate(rowItem);
+        // const selectedRow = target.attr('data-value');
+        // const rowItem = data.find(x => x['sn'] === selectedRow);
 
-        $('.loading').removeClass('loading');
     }
 }, false);
 

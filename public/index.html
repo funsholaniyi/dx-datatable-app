@@ -21,9 +21,11 @@
                     the crop yield per hectare.
                     <small>(official description)</small>
                 </p>
-                <input class="form-control form-control-lg search-table" type="text" placeholder="search by region, district or year">
+                <input class="form-control search-table" type="text" placeholder="search by region, district or year">
                 <small>*Limitation: Search must match keyword exactly except its casing</small>
-                <hr class="my-4">
+                <hr>
+                <p>You clicked <span id="cell-data">Nothing</span></p>
+                <hr>
                 <p>
                     The <a
                         href="https://data.gov.gh/dataset/agricultural-production-estimates-1993-2017/resource/166a7473-0a71-41ab-acec-2d4814935134"
@@ -43,10 +45,7 @@
 
                 <hr>
                 <p>Side Notes</p>
-                <ul>
-                    <li>Not yet all screen view compatible</li>
-                    <li><a href="https://www.sitepoint.com/single-page-app-without-framework/" target="_blank">This tutorial</a> was really helpful as i am mostly experienced with the Angular framework</li>
-                </ul>
+                    <small>- Not yet all screen view compatible and <a href="https://www.sitepoint.com/single-page-app-without-framework/" target="_blank">This tutorial</a> was really helpful as i am mostly experienced with the Angular framework</small>
             </div>
         </div>
         <div class="col-md-9  col-xs-12 main">
@@ -63,30 +62,6 @@
                 </div>
             </script>
 
-            <!-- Error Template -->
-            <script id="details-template" type="text/x-handlebars-template">
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </script>
 
 
             <!-- Currency Rates Template -->

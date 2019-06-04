@@ -35,6 +35,12 @@ h1, h2, h3, h4, h5, h6, th, button {
     color: white;
 }
 
+#cell-data{
+    font-weight: 700;
+    font-family: 'Karla', '', sans-serif;
+    color: #6747c7;
+}
+
 
 /* Landscape phones and down */
 @media (max-width: 720px) {
