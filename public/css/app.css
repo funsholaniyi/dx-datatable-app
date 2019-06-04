@@ -1,5 +1,5 @@
 body {
-    padding-top: .5rem;
+    top: .5rem;
     font-size: 14px;
     overflow-x: hidden;
     font-family: 'Lato', sans-serif;
@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6, th, button {
 .sidebar{
     z-index: 1;
     left: 10px;
+    position: fixed;
     overflow-x: hidden;
     padding: 8px 0;
 }
@@ -29,6 +30,23 @@ h1, h2, h3, h4, h5, h6, th, button {
     margin-left: 25%;
 }
 
+
+/* Landscape phones and down */
+@media (max-width: 720px) {
+    body {
+        top: 0;
+    }
+    .sidebar{
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    .main{
+        margin-top: 10%;
+        margin-left: 0;
+    }
+}
 
 th{
     text-transform: uppercase;
