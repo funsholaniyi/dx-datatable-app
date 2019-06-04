@@ -40,7 +40,6 @@ window.addEventListener('load', () => {
         try {
             // Load Currency Rates
             if (all_data === null || !all_data) {
-                console.log('got here page');
                 const response = await api.get('/');
                 all_data = response.data;
                 localStorage.setItem('__agric_data__', JSON.stringify(all_data));
@@ -71,7 +70,6 @@ document.addEventListener('click', function (event) {
         event.preventDefault();
 
         // Log the clicked element in the console
-        // console.log(event.target);
 
         const target = $(event.target);
         // $('.item').removeClass('active');
@@ -113,10 +111,12 @@ document.addEventListener('click', function (event) {
         event.preventDefault();
 
         const target = $(event.target);
-        // $('.item').removeClass('active');
-        // target.addClass('sorted');
+        $('tr').removeClass('branded-row');
+        target.parent().addClass('branded-row');
 
         // new page
+
+        console.log(target);
 
         const selectedRow = target.attr('data-value');
         const rowItem = data.find(x => x['sn'] === selectedRow);
@@ -125,6 +125,29 @@ document.addEventListener('click', function (event) {
         $('.loading').removeClass('loading');
     }
 }, false);
+
+$('.search-table').keyup(event => {
+    event.preventDefault();
+
+    const target = $(event.target);
+    let search = target.val().toUpperCase();
+
+    data = all_data.filter(x => {
+        return x['year'] === search || x['region'] === search || x['district'] === search
+    });
+
+    if (data != null){
+        let html = tableTemplate({data});
+        el.html(html);
+    }
+
+
+    if(!search){
+        data = all_data.slice(0, pageSize);
+        let html = tableTemplate({data, pageNumber});
+        el.html(html);
+    }
+});
 
 
 Handlebars.registerHelper('times', function (n, block) {
